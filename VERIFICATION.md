@@ -18,8 +18,8 @@ The verified-notes HTTP suite has 14 cases.
 An ephemeral ES256 fixture supplies real registration bytes and assertion signatures to the unmodified server verifier.
 The cases cover changed signatures, challenge and origin failures, RP ID hash, missing user verification, replay, CSRF byte lengths, session rotation, and concurrent credential limits.
 
-On 2026-10-26 both suites passed on macOS arm64 with Node.js 26.10.0.
 CI runs `npm run check` on Ubuntu, macOS, and Windows with Node.js 22, 24, and 26, plus 22.13.0 on Ubuntu; the verified-notes suite runs on Ubuntu with Node.js 22, 24, and 26.
+Every job in that matrix passed on commit dc0c542, and both suites also passed locally on macOS arm64 with Node.js 26.10.0.
 
 ## Latest native browser run
 
@@ -45,7 +45,6 @@ Both runners compare the served SDK bytes with the archive under test, confirm t
 
 ## Not yet verified
 
-- Node.js 22 and 24 for this revision.
 - Browsers other than Chrome, physical authenticators, and synced credential providers.
   Virtual authenticators do not establish support for a real browser and provider combination.
 - An independent cryptographic audit of the implementation and envelope format.

@@ -7,12 +7,12 @@ import io
 import json
 from pathlib import Path
 import tarfile
-from urllib.parse import urlsplit
 from threading import Thread
-
-from server import create_server
+from urllib.parse import urlsplit
 
 from playwright.sync_api import sync_playwright
+
+from server import create_server
 
 here = Path(__file__).resolve().parent
 project = here.parents[1]
