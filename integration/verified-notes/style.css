@@ -1,0 +1,14 @@
+:root { color-scheme: light dark; font: 16px/1.5 system-ui, sans-serif; }
+body { margin: 0; background: Canvas; color: CanvasText; }
+main { max-width: 48rem; margin: 2rem auto; padding: 0 1.25rem 3rem; }
+section { margin: 1.5rem 0; padding-top: 1rem; border-top: 1px solid GrayText; }
+h1, h2 { line-height: 1.2; }
+h2 { font-size: 1.2rem; }
+label { display: block; margin-top: 1rem; font-weight: 600; }
+textarea, input { display: block; box-sizing: border-box; width: 100%; padding: .6rem; margin: .35rem 0 .8rem; font: inherit; }
+button { min-height: 2.75rem; padding: .55rem .8rem; font: inherit; cursor: pointer; }
+button:disabled { cursor: default; }
+.actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+#error { padding: .75rem; border: 2px solid #b33; }
+:focus-visible { outline: 3px solid Highlight; outline-offset: 3px; }
+[hidden] { display: none !important; }

@@ -1,0 +1,62 @@
+{
+  "name": "passkey-vault-kit",
+  "version": "0.2.0",
+  "description": "Local encrypted envelopes unlocked with WebAuthn PRF output or an independent recovery key.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Hanbin Tan",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hskl18/passkey-vault-kit.git"
+  },
+  "bugs": "https://github.com/hskl18/passkey-vault-kit/issues",
+  "homepage": "https://github.com/hskl18/passkey-vault-kit#readme",
+  "keywords": [
+    "webauthn",
+    "passkey",
+    "prf",
+    "encryption",
+    "webcrypto",
+    "aes-gcm",
+    "recovery-key"
+  ],
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "examples",
+    "README.md",
+    "SECURITY.md",
+    "FORMAT.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "node node_modules/typescript/bin/tsc -p tsconfig.json",
+    "typecheck": "node node_modules/typescript/bin/tsc -p tsconfig.json --noEmit",
+    "typecheck:examples": "node node_modules/typescript/bin/tsc -p tsconfig.examples.json",
+    "test:built": "node --test test/vault.test.mjs test/prf.test.mjs test/v2.test.mjs",
+    "test": "npm run build && npm run test:built",
+    "test:package": "node --test test/package.test.mjs",
+    "test:browser": "python3 test/browser/verify_browser.py",
+    "test:integration": "npm --prefix integration/verified-notes test",
+    "test:integration:browser": "python3 integration/verified-notes/verify_browser.py",
+    "example:notes": "npm --prefix integration/verified-notes start",
+    "fixture:generate": "node scripts/generate-fixture.mjs",
+    "check": "npm run typecheck && npm run build && npm run typecheck:examples && npm run test:built && npm run test:package",
+    "demo": "npm run build && node examples/node-demo.mjs",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "7.0.2",
+    "typescript-5-7": "npm:typescript@5.7.3"
+  }
+}

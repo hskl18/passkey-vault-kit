@@ -1,0 +1,67 @@
+{
+  "notice": "PUBLIC SYNTHETIC FIXTURE. All secrets are public; never store real data with them.",
+  "generator": "scripts/generate-fixture.mjs using independent node:crypto and FORMAT.md",
+  "plaintext": "U3ludGhldGljIHYyIGZpeHR1cmUgb3BlbmVkIGJ5IHRocmVlIHBhc3NrZXlzIGFuZCBvbmUgcmVjb3Zlcnkga2V5Lg",
+  "recoveryKey": "QUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVpbXF1eX2A",
+  "prfOutputs": [
+    {
+      "credentialId": "ISIjJCUmJyg",
+      "prfOutput": "AQIDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRobHB0eHyA"
+    },
+    {
+      "credentialId": "KSorLC0uLzA",
+      "prfOutput": "jY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6w"
+    },
+    {
+      "credentialId": "MTIzNDU2Nzg",
+      "prfOutput": "ra6vsLGys7S1tre4ubq7vL2-v8DBwsPExcbHyMnKy8w"
+    }
+  ],
+  "vault": {
+    "version": 2,
+    "suite": "HKDF-SHA-256/A256GCM",
+    "id": "BwgJCgsMDQ4PEBESExQVFg",
+    "hkdfSalt": "FxgZGhscHR4fICEiIyQlJicoKSorLC0uLzAxMjM0NTY",
+    "binding": {
+      "rpId": "example.com",
+      "credentialId": "ISIjJCUmJyg",
+      "prfSalt": "YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXp7fH1-f4A"
+    },
+    "passkey": {
+      "iv": "BQYHCAkKCwwNDg8Q",
+      "ciphertext": "e9OMaRQZeymBwC5z2pGvXsHxhgUJ85TghkAt3WqQQP7CEh3i3KZeK_CwufckOqGx"
+    },
+    "extraPasskeys": [
+      {
+        "binding": {
+          "rpId": "example.com",
+          "credentialId": "KSorLC0uLzA",
+          "prfSalt": "YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXp7fH1-f4A"
+        },
+        "passkey": {
+          "iv": "ERITFBUWFxgZGhsc",
+          "ciphertext": "49e6SePY2h1WMgqUdKh9DRZOvKIfP31n1PigHOtzsmu3SlcCJ2JkxEwh5rMN6X-R"
+        }
+      },
+      {
+        "binding": {
+          "rpId": "example.com",
+          "credentialId": "MTIzNDU2Nzg",
+          "prfSalt": "YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXp7fH1-f4A"
+        },
+        "passkey": {
+          "iv": "HR4fICEiIyQlJico",
+          "ciphertext": "1rXqRKR8sV1B-t_fOKq30x7xQBYNAPmo8DVXXkO3gQ1tkGUQ6CE8m0XtzN3kim4E"
+        }
+      }
+    ],
+    "recovery": {
+      "iv": "MzQ1Njc4OTo7PD0-",
+      "ciphertext": "1h2xWd0zbfu5UGitMiipemk8DkcJayIVl46x_jv0qEjlxV8lUjUpJ2A45TKsdMiw"
+    },
+    "payload": {
+      "iv": "UVJTVFVWV1hZWltc",
+      "ciphertext": "MDXXtI7oflbhmvelGq1Hdxa2QRrSPpmIYe493uGMaaIfrapDNyEz1lCFA9bXgu3h-daBL8Lkl99ROt-sKqTmOalPngZFn-AN-7NqliZvxKfxog8"
+    }
+  }
+}

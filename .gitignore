@@ -1,0 +1,15 @@
+node_modules/
+.venv/
+__pycache__/
+dist/
+*.tgz
+.DS_Store
+.env*
+!.env.example
+*.vault.json
+*.recovery
+.package-check.*/
+.package-check/
+.artifacts/
+coverage/
+.verification/

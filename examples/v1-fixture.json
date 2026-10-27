@@ -1,0 +1,30 @@
+{
+  "notice": "PUBLIC SYNTHETIC FIXTURE. All secrets are public; never store real data with them.",
+  "generator": "scripts/generate-fixture.mjs using independent node:crypto and FORMAT.md",
+  "plaintext": "U3ludGhldGljIHYxIGZpeHR1cmU6IOS4reaWhywgACBhbmQg8J-UkC4",
+  "prfOutput": "AQIDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRobHB0eHyA",
+  "recoveryKey": "QUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVpbXF1eX2A",
+  "vault": {
+    "version": 1,
+    "suite": "HKDF-SHA-256/A256GCM",
+    "id": "wcLDxMXGx8jJysvMzc7P0A",
+    "hkdfSalt": "0dLT1NXW19jZ2tvc3d7f4OHi4-Tl5ufo6err7O3u7_A",
+    "binding": {
+      "rpId": "example.com",
+      "credentialId": "ISIjJCUmJyg",
+      "prfSalt": "YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXp7fH1-f4A"
+    },
+    "passkey": {
+      "iv": "AwQFBgcICQoLDA0O",
+      "ciphertext": "TSmnz-Rsb3XuOmgdWd54ZJ5r8tXOZibV1MTvaXKV4s2WA4OVwi-RLplQmzDGt2Dj"
+    },
+    "recovery": {
+      "iv": "MzQ1Njc4OTo7PD0-",
+      "ciphertext": "MlZFL_uyB7VslIvZfD5BbbM2kjJJGezcCj6ejUAk-qyBggiv68EG5C_9Ya8USNqX"
+    },
+    "payload": {
+      "iv": "UVJTVFVWV1hZWltc",
+      "ciphertext": "Di8FW9wkRwr9NMzQNq_ZoEtPcfSCA61_SlKPlvqXSDbqAH5mSk7Yd8XktFfBeFWWbuRoeNR2wHyB"
+    }
+  }
+}

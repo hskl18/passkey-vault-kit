@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Verified local notes</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/vendor/simplewebauthn.js" defer></script>
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <main>
+    <h1>Verified local notes</h1>
+    <p>A synthetic local example. Passkey registration and login are verified by this temporary server. Notes and recovery keys stay in this browser.</p>
+    <p id="status" role="status" aria-live="polite">Starting local session...</p>
+    <p id="error" role="alert" hidden></p>
+    <section aria-labelledby="identity-heading">
+      <h2 id="identity-heading">Passkey session</h2>
+      <p id="identity">Not authenticated.</p>
+      <div class="actions">
+        <button id="register" type="button" disabled>Register passkey</button>
+        <button id="login" type="button" disabled>Log in</button>
+        <button id="logout" type="button" disabled>Log out and clear plaintext</button>
+      </div>
+    </section>
+    <section aria-labelledby="note-heading">
+      <h2 id="note-heading">Encrypted note</h2>
+      <label for="note">Note (up to 64 KiB of UTF-8)</label>
+      <textarea id="note" rows="7" disabled></textarea>
+      <div class="actions">
+        <button id="encrypt" type="button" disabled>Encrypt a candidate</button>
+        <button id="unlock" type="button" disabled>Unlock saved note with passkey</button>
+        <button id="add-passkey" type="button" disabled>Add this passkey to the saved note</button>
+      </div>
+      <p id="storage-state">No saved envelope.</p>
+    </section>
+    <section id="pending" aria-labelledby="pending-heading" hidden>
+      <h2 id="pending-heading">Save the new recovery key</h2>
+      <p>The current saved envelope is retained until you independently save and confirm this new key. The candidate has already been opened using both PRF and recovery.</p>
+      <p id="pending-warning" role="alert" hidden></p>
+      <label for="new-recovery-key">New recovery key (save separately)</label>
+      <textarea id="new-recovery-key" rows="3" readonly spellcheck="false" autocomplete="off"></textarea>
+      <label for="confirm-recovery">Re-enter the independently saved new recovery key</label>
+      <input id="confirm-recovery" type="password" autocomplete="off" spellcheck="false">
+      <button id="save-recovery" type="button" disabled>Confirm key and save encrypted note</button>
+    </section>
+    <section aria-labelledby="recovery-heading">
+      <h2 id="recovery-heading">Independent local recovery</h2>
+      <p>Recovery decrypts the saved note locally. It does not log in or change server credentials.</p>
+      <label for="recovery-key">Saved recovery key</label>
+      <input id="recovery-key" type="password" autocomplete="off" spellcheck="false">
+      <button id="recover" type="button" disabled>Recover saved note locally</button>
+    </section>
+    <p>This example keeps credential public keys and sessions only in server memory. Restarting the server removes login records; keep your recovery key. Browser storage eviction can remove encrypted notes.</p>
+  </main>
+</body>
+</html>
