@@ -4,6 +4,17 @@ A small TypeScript library that encrypts local data and unlocks it with a passke
 It uses the platform WebCrypto API and has no runtime dependencies, account service, telemetry, or storage integration.
 It has not received an independent cryptographic audit; see [SECURITY.md](SECURITY.md) for the trust boundary.
 
+```mermaid
+flowchart LR
+    data["Your data, up to 16 MiB"] --> encrypt{{"AES-256-GCM"}}
+    dataKey["Random data key"] --> encrypt
+    dataKey --> wrapPasskey{{"Wrap with a key derived from passkey PRF output"}}
+    dataKey --> wrapRecovery{{"Wrap with a key derived from the recovery secret"}}
+    encrypt --> envelope["Versioned JSON envelope"]
+    wrapPasskey -->|one per passkey, up to eight| envelope
+    wrapRecovery --> envelope
+```
+
 ## What it does
 
 - Encrypts up to 16 MiB with a random AES-256-GCM data key.
