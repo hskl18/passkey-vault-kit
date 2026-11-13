@@ -8,7 +8,7 @@ It has not received an independent cryptographic audit; see [SECURITY.md](SECURI
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/architecture-dark.svg">
-  <img alt="Your data, up to 16 MiB, is encrypted with AES-256-GCM under a random data key. The data key is wrapped with a key derived from each passkey's PRF output, up to eight passkeys, and with a key derived from the recovery secret, and all of it goes into a versioned JSON envelope." src="docs/architecture-light.svg">
+  <img alt="Your data, up to 16 MiB, is encrypted with AES-256-GCM under a random data key. The data key is wrapped with a key derived from each passkey's PRF output, up to eight passkeys, and with a key derived from the recovery secret. The encrypted data and each wrapped copy of the data key go into a versioned JSON envelope." src="docs/architecture-light.svg">
 </picture>
 
 ## What it does
