@@ -1,0 +1,9 @@
+flowchart LR
+    data["Your data, up to 16 MiB"] --> encrypt{{"AES-256-GCM"}}
+    dataKey["Random data key"] --> encrypt
+    dataKey --> wrapPasskey{{"Wrap with a key derived from passkey PRF output"}}
+    dataKey --> wrapRecovery{{"Wrap with a key derived from the recovery secret"}}
+    encrypt --> envelope["Versioned JSON envelope"]
+    wrapPasskey -->|one per passkey, up to eight| envelope
+    wrapRecovery --> envelope
+%% Edit this file; the owner renders architecture-light.svg and architecture-dark.svg from it with a shared theme.
